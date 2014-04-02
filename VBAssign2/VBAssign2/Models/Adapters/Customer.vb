@@ -3,7 +3,9 @@
 
 Imports VBA01Lib
 
-' i am bo - test Git
+' i added one more
 Public Class Customer
+
+    'Moe's Comment
 
 End Class
