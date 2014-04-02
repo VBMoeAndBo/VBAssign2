@@ -190,7 +190,7 @@
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
-    <Compile Include="Controllers\Adapters\Customer.vb" />
+    <Compile Include="Models\Adapters\Customer.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
