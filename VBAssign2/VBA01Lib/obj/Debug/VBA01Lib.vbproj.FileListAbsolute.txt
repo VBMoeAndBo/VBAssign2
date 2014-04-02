@@ -1,0 +1,11 @@
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\bin\Debug\VBA01Lib.dll
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\bin\Debug\VBA01Lib.pdb
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\bin\Debug\VBA01Lib.xml
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.vbprojResolveAssemblyReference.cache
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.Resources.resources
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.vbproj.GenerateResource.Cache
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.dll
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.xml
+C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBA01Lib\obj\Debug\VBA01Lib.pdb
