@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBAssign2", "VBAssign2\VBAssign2.vbproj", "{25866666-E286-4715-BAC1-7236BE954806}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBAssign2.Tests", "VBAssign2.Tests\VBAssign2.Tests.vbproj", "{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBA01Lib", "VBA01Lib\VBA01Lib.vbproj", "{1BD32458-163E-46B3-BBB9-137446052356}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25866666-E286-4715-BAC1-7236BE954806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25866666-E286-4715-BAC1-7236BE954806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25866666-E286-4715-BAC1-7236BE954806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25866666-E286-4715-BAC1-7236BE954806}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD32458-163E-46B3-BBB9-137446052356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD32458-163E-46B3-BBB9-137446052356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD32458-163E-46B3-BBB9-137446052356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD32458-163E-46B3-BBB9-137446052356}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
