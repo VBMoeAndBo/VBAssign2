@@ -1,3 +1,6 @@
 C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBAssign2\obj\Debug\VBAssign2.vbprojResolveAssemblyReference.cache
 C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBAssign2\obj\Debug\VBAssign2.Resources.resources
 C:\Users\mctenenbaum\Desktop\VBAssign\MoeV1\VBAssign2\VBAssign2\obj\Debug\VBAssign2.vbproj.GenerateResource.Cache
+C:\Users\bliu54\Desktop\VBAssign2\VBAssign2\VBAssign2\obj\Debug\VBAssign2.vbprojResolveAssemblyReference.cache
+C:\Users\bliu54\Desktop\VBAssign2\VBAssign2\VBAssign2\obj\Debug\VBAssign2.Resources.resources
+C:\Users\bliu54\Desktop\VBAssign2\VBAssign2\VBAssign2\obj\Debug\VBAssign2.vbproj.GenerateResource.Cache

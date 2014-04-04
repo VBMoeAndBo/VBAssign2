@@ -4,6 +4,7 @@ Imports System.Collections.Generic
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
 Imports System.Data.Entity.SqlServer
+Imports VBAssign2.MyModels
 
 'add profile data for the user by adding more properties
 Namespace MyModels
@@ -12,7 +13,7 @@ Namespace MyModels
         Inherits IdentityDbContext(Of ApplicationUser)
 
         ' customermized properties
-        Public Overridable Property Customer As IDbSet(Of Adapters.Customer)
+        Public Overridable Property Customer As IDbSet(Of Customer)
 
 
     End Class
