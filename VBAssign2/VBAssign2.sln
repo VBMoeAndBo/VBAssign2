@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBAssign2", "VBAssign2\VBAs
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBAssign2.Tests", "VBAssign2.Tests\VBAssign2.Tests.vbproj", "{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBA1", "..\..\..\Downloads\VBA1\VBA1\DPS916A1\VBA1.vbproj", "{7148D1BB-AD0D-458B-B063-B0C3EC0394E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6129DE0D-6C9C-4A25-A2F4-DCD65CD11E10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7148D1BB-AD0D-458B-B063-B0C3EC0394E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7148D1BB-AD0D-458B-B063-B0C3EC0394E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7148D1BB-AD0D-458B-B063-B0C3EC0394E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7148D1BB-AD0D-458B-B063-B0C3EC0394E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
