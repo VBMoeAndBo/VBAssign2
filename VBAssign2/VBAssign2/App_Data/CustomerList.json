@@ -1,0 +1,337 @@
+{
+  "$type": "System.Collections.Generic.List`1[[Kit.BO.Customer, Kit]], mscorlib",
+  "$values": [
+    {
+      "CustomerID": 3,
+      "Name": "testN3",
+      "Email": "test3@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 3,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 3,
+                  "ItemID": 3,
+                  "ItemName": "Fish",
+                  "ItemPrice": 5.19
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 3,
+                  "ItemID": 7,
+                  "ItemName": "asdf",
+                  "ItemPrice": 22.0
+                }
+              ]
+            }
+          },
+          {
+            "OrderID": 2,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 3,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 3,
+                  "ItemID": 5,
+                  "ItemName": "asdfasfd",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          },
+          {
+            "OrderID": 3,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 2,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 2,
+                  "ItemID": 3,
+                  "ItemName": "Fish",
+                  "ItemPrice": 5.19
+                }
+              ]
+            }
+          },
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 3,
+                  "ItemName": "Fish",
+                  "ItemPrice": 5.19
+                }
+              ]
+            }
+          },
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 2,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 2,
+                  "ItemID": 3,
+                  "ItemName": "Fish",
+                  "ItemPrice": 5.19
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 4,
+      "Name": "TestNameWithOrder",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "item1",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 5,
+      "Name": "TestNameWithOrder",
+      "Email": "test5@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "item1",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 6,
+      "Name": "TestNameWithOrder",
+      "Email": "test6@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "item1",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 7,
+      "Name": "TestNameWithOrder",
+      "Email": "test7@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "item1",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 8,
+      "Name": "testName",
+      "Email": "test8@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": []
+      }
+    },
+    {
+      "CustomerID": 9,
+      "Name": "TestNameWithOrder",
+      "Email": "test9@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "item1",
+                  "ItemPrice": 1.0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "CustomerID": 10,
+      "Name": "abc",
+      "Email": "abc@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": []
+      }
+    },
+    {
+      "CustomerID": 11,
+      "Name": "a",
+      "Email": "a@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": []
+      }
+    },
+    {
+      "CustomerID": 12,
+      "Name": "12",
+      "Email": "12@myseneca.ca",
+      "OrderList": {
+        "$type": "System.Collections.Generic.List`1[[Kit.BO.Order, Kit]], mscorlib",
+        "$values": [
+          {
+            "OrderID": 1,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 3,
+                  "ItemName": "Fish",
+                  "ItemPrice": 5.19
+                }
+              ]
+            }
+          },
+          {
+            "OrderID": 2,
+            "OrderItems": {
+              "$type": "System.Collections.Generic.List`1[[Kit.BO.OrderItem, Kit]], mscorlib",
+              "$values": [
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 8,
+                  "ItemName": "Toufu",
+                  "ItemPrice": 1.99
+                },
+                {
+                  "Paid": true,
+                  "Quantity": 1,
+                  "ItemID": 1,
+                  "ItemName": "Beef",
+                  "ItemPrice": 5.99
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

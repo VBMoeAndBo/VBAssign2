@@ -7,6 +7,11 @@ Public Class MvcApplication
         FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters)
         RouteConfig.RegisterRoutes(RouteTable.Routes)
         BundleConfig.RegisterBundles(BundleTable.Bundles)
+
+        '* MF: seed database with Identity and JSON records (or hard-coded values)
+        System.Data.Entity.Database.SetInitializer(New MyDbInitializer())
+        '* MF: ------------------------------------------------------
+
     End Sub
 End Class
 

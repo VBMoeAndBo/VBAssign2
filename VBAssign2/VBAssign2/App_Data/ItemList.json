@@ -1,0 +1,35 @@
+{
+  "$type": "System.Collections.Generic.List`1[[Kit.BO.Item, Kit]], mscorlib",
+  "$values": [
+    {
+      "ItemID": 1,
+      "ItemName": "Beef",
+      "ItemPrice": 5.99
+    },
+    {
+      "ItemID": 3,
+      "ItemName": "Fish",
+      "ItemPrice": 5.19
+    },
+    {
+      "ItemID": 5,
+      "ItemName": "asdfasfd",
+      "ItemPrice": 1.0
+    },
+    {
+      "ItemID": 6,
+      "ItemName": "asdfasfd",
+      "ItemPrice": 1.0
+    },
+    {
+      "ItemID": 7,
+      "ItemName": "asdf",
+      "ItemPrice": 22.0
+    },
+    {
+      "ItemID": 8,
+      "ItemName": "Toufu",
+      "ItemPrice": 1.99
+    }
+  ]
+}

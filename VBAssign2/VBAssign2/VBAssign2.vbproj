@@ -187,17 +187,33 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\FilterConfig.vb" />
+    <Compile Include="App_Start\MyStart\IdentityConfig.vb" />
+    <Compile Include="App_Start\MyStart\SeedData.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\CustomerController.vb" />
+    <Compile Include="Controllers\ItemController.vb" />
+    <Compile Include="Controllers\OrderController.vb" />
     <Compile Include="Models\Adapters\Customer.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.vb" />
+    <Compile Include="Models\Adapters\Item.vb" />
+    <Compile Include="Models\Adapters\Order.vb" />
+    <Compile Include="Models\AppDomainClasses.vb" />
     <Compile Include="Models\DataContext.vb" />
-    <Compile Include="Models\DesignModelClasses.vb" />
-    <Compile Include="Models\IdentityModels.vb" />
+    <Compile Include="Models\CustomerService.vb" />
+    <Compile Include="Models\ViewModels\RepoCustomer.vb" />
+    <Compile Include="Models\ViewModels\RepoItem.vb" />
+    <Compile Include="Models\ViewModels\RepoOrder.vb" />
+    <Compile Include="Models\ViewModels\ViewModelClasses.vb" />
+    <Compile Include="Models\ViewModels\RepoBase.vb" />
+    <Compile Include="Models\ViewModels\VM_Customer.vb" />
+    <Compile Include="Models\ViewModels\VM_Error.vb" />
+    <Compile Include="Models\ViewModels\VM_Item.vb" />
+    <Compile Include="Models\ViewModels\VM_Order.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -231,6 +247,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Data\CustomerList.json" />
+    <Content Include="App_Data\ItemList.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -259,6 +277,15 @@
     <Content Include="Views\Account\Manage.vbhtml" />
     <Content Include="Views\Account\Register.vbhtml" />
     <Content Include="Views\Shared\_LoginPartial.vbhtml" />
+    <Content Include="Views\Customer\Index.vbhtml" />
+    <Content Include="Views\Order\Create.vbhtml" />
+    <Content Include="Views\Item\itemList.vbhtml" />
+    <Content Include="Views\Item\Create.vbhtml" />
+    <Content Include="Views\Item\Edit.vbhtml" />
+    <Content Include="Views\Customer\Details.vbhtml" />
+    <Content Include="Views\Customer\Create.vbhtml" />
+    <Content Include="Views\Customer\Edit.vbhtml" />
+    <Content Include="Views\Order\orderList.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -279,19 +306,23 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\_ViewStart.vbhtml" />
     <Content Include="Views\Home\About.vbhtml" />
-    <Content Include="Views\Home\Contact.vbhtml" />
     <Content Include="Views\Home\Index.vbhtml" />
     <Content Include="Views\Shared\Error.vbhtml" />
     <Content Include="Views\Shared\_Layout.vbhtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VBALib\VBALib.vbproj">
+      <Project>{75f80700-b1bd-4139-aff8-5647b5d8af12}</Project>
+      <Name>VBALib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

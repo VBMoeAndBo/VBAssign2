@@ -4,13 +4,13 @@ Imports Microsoft.AspNet.Identity
 Imports Microsoft.AspNet.Identity.EntityFramework
 Imports Microsoft.AspNet.Identity.Owin
 Imports Microsoft.Owin.Security
-
+Imports VBAssign2.MyModels
 <Authorize>
 Public Class AccountController
     Inherits Controller
 
     Public Sub New()
-        Me.New(New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New ApplicationDbContext())))
+        Me.New(New UserManager(Of ApplicationUser)(New UserStore(Of ApplicationUser)(New DataContext())))
     End Sub
 
     Public Sub New(manager As UserManager(Of ApplicationUser))
@@ -64,10 +64,19 @@ Public Class AccountController
         If ModelState.IsValid Then
             ' Create a local login before signing in the user
             Dim user = New ApplicationUser() With {.UserName = model.UserName}
-            Dim result = Await UserManager.CreateAsync(User, model.Password)
+            Dim result = Await UserManager.CreateAsync(user, model.Password)
+
+            ' Create the new user in the role MEMBER
             If result.Succeeded Then
-                Await SignInAsync(User, isPersistent:=False)
-                Return RedirectToAction("Index", "Home")
+                Dim um = New UserManager(Of ApplicationUser)(
+                         New UserStore(Of ApplicationUser)(New DataContext()))
+                Dim idResult = um.AddToRole(user.Id, "MEMBER")
+                If (idResult.Succeeded) Then
+                    Await SignInAsync(user, isPersistent:=False)
+                    Return RedirectToAction("Index", "Home")
+                Else
+                    AddErrors(result)
+                End If
             Else
                 AddErrors(result)
             End If
