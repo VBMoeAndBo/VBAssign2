@@ -101,6 +101,7 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="Controllers\HomeControllerTest.vb" />
   </ItemGroup>
@@ -111,6 +112,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VBALib\VBALib.vbproj">
+      <Project>{75f80700-b1bd-4139-aff8-5647b5d8af12}</Project>
+      <Name>VBALib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VBAssign2\VBAssign2.vbproj">
       <Project>{25866666-E286-4715-BAC1-7236BE954806}</Project>
       <Name>VBAssign2</Name>

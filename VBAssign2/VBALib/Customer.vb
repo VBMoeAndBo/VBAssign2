@@ -30,7 +30,7 @@ Namespace BO
             Set(value As String)
                 If Not Regex.IsMatch(value, "[a-zA-Z0-9]+@myseneca\.ca$") And Not Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
                     valid_ = False
-                    Throw New ArgumentException("Email addresses is invalid")
+                    Throw New ArgumentException("Email address is invalid, must be of format 'xxx@myseneca.ca' or 'xxx.xxx@senecacollege.ca'")
                 Else
                     _email = value
                 End If
@@ -83,13 +83,18 @@ Namespace BO
 
 
         Public Sub New()
-            _id = -1
-            Me.Name = "new"
-            Me.Email = "default@myseneca.ca"
-            Dim ordL As List(Of Order) = Nothing
-            Me.Orders = ordL
-            Me.Phone = ""
-            valid_ = True
+            '_id = -1
+            'Me.Name = "new"
+            'Me.Email = "default@myseneca.ca"
+            'Dim ordL As List(Of Order) = Nothing
+            'Me.Orders = ordL
+            'Me.Phone = ""
+            'valid_ = True
+        End Sub
+
+        Public Sub New(n As String, e As String)
+            Name = n
+            Email = e
         End Sub
 
         Public Sub New(id As Integer, name As String, email As String, phone As String, Optional ByVal orders As List(Of Order) = Nothing)

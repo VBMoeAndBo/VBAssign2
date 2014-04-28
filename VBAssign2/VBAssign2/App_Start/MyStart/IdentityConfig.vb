@@ -110,7 +110,7 @@ Public Class MyDbInitializer
 
     Dim jsonFile As String
 
-    Sub New(Optional jf As String = "")
+    Sub New(Optional jf As String = "../App_Data/CustomerList.json")
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", False)
         '    sw.WriteLine("New: Before all initializing")
