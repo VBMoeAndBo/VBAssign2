@@ -9,6 +9,8 @@ Imports System.Linq
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports System.Web
+Imports System.Web.Hosting
+
 
 
 'Public Module IdentityConfig
@@ -21,7 +23,7 @@ Public Class MyDbInitializer
     Inherits DropCreateDatabaseAlways(Of DataContext)
 
     Protected Overrides Sub Seed(context As DataContext)
-      
+
 
         '* initialize Identity
         InitializeIdentityForEF(context)
@@ -110,13 +112,20 @@ Public Class MyDbInitializer
 
     Dim jsonFile As String
 
-    Sub New(Optional jf As String = "../App_Data/CustomerList.json")
+    Dim temp As String
+
+
+    Sub New(jf As String)
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", False)
         '    sw.WriteLine("New: Before all initializing")
         'End Using
+        If Not jf.Equals("") Then
+            jsonFile = HostingEnvironment.MapPath("~/App_Data/CustomerList.json")
+        Else
+            jsonFile = jf
+        End If
 
-        jsonFile = jf
     End Sub
 
 End Class
