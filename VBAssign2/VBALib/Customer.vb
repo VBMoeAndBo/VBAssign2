@@ -134,9 +134,11 @@ Namespace BO
         Function DeserializeJSON(jsonFilename As String) As List(Of Customer)
 
             Dim jsonString As String
+            Dim Hello As String
 
             Using sr As New IO.StreamReader(jsonFilename)
                 jsonString = sr.ReadToEnd()
+                Hello = ""
             End Using
 
             Try

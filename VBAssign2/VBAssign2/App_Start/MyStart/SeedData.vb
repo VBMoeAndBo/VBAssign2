@@ -36,10 +36,10 @@ Public Class SeedData
     Private Sub SeedFromFile(context As DataContext)
 
         '* read from json file stored in App_Data folder
-        Dim jsonCusomters As List(Of VBALib.BO.Customer)
+        Dim jsonCustomers As List(Of VBALib.BO.Customer)
         Dim aCustomer As New VBALib.BO.Customer
 
-        jsonCusomters = VBALib.BO.CustomerHelper.DeserializeJSON(jsonFile_)
+        jsonCustomers = VBALib.BO.CustomerHelper.DeserializeJSON(jsonFile_)
 
         '* Create list of MvcMessageAdapters to hold only records
         '* that are valid for given business rules (IsValid flag
@@ -48,7 +48,7 @@ Public Class SeedData
 
         Dim pId As Integer = 0
 
-        For Each jCst In jsonCusomters
+        For Each jCst In jsonCustomers
             If (jCst.IsValid) Then
 
                 mvcCustomers.Add(New Adapters.Customer(jCst, pId))
@@ -66,7 +66,7 @@ Public Class SeedData
 
 
         '* Free records
-        jsonCusomters = Nothing
+        jsonCustomers = Nothing
         mvcCustomers = Nothing
 
         '   MyBase.Seed(context)

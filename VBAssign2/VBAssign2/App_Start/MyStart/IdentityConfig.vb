@@ -29,16 +29,16 @@ Public Class MyDbInitializer
         InitializeIdentityForEF(context)
 
         '' left this here to demonstrate how I debugged unit testing issues
-        'Using sw = New IO.StreamWriter("logFile.txt", True)
+        Using sw = New IO.StreamWriter("logFile.txt", True)
 
-        '    sw.WriteLine("Done with identity, now initializing json")
-        '    sw.WriteLine("your directory is: " + Environment.CurrentDirectory)
-        '    sw.WriteLine("Calling jsonFile: " + jsonFile)
+            sw.WriteLine("Done with identity, now initializing json")
+            sw.WriteLine("your directory is: " + Environment.CurrentDirectory)
+            sw.WriteLine("Calling jsonFile: " + jsonFile)
 
-        '    'Using srj = New IO.StreamReader(jsonFile)
-        '    '    sw.WriteLine(srj.ReadToEnd())
-        '    'End Using
-        'End Using
+            'Using srj = New IO.StreamReader(jsonFile)
+            '    sw.WriteLine(srj.ReadToEnd())
+            'End Using
+        End Using
 
         '* initialize data with JSON data
         Dim sd = New SeedData(jsonFile)
@@ -112,15 +112,15 @@ Public Class MyDbInitializer
 
     Dim jsonFile As String
 
-    Dim temp As String
 
 
-    Sub New(jf As String)
+
+    Sub New(Optional jf As String = "")
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", False)
         '    sw.WriteLine("New: Before all initializing")
         'End Using
-        If Not jf.Equals("") Then
+        If jf.Equals("") Then
             jsonFile = HostingEnvironment.MapPath("~/App_Data/CustomerList.json")
         Else
             jsonFile = jf
