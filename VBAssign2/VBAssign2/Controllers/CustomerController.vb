@@ -51,11 +51,11 @@ Public Class CustomerController
     <HttpPost()>
     Function Create(ByVal customer As CustomerFull) As ActionResult
         Try
-            If ModelState.IsValid Then
-                db.Customers.Add(customer)
-                db.SaveChanges()
-                Return RedirectToAction("Index")
-            End If
+            'If ModelState.IsValid Then
+            '    db.Customers.Add(customer)
+            '    db.SaveChanges()
+            '    Return RedirectToAction("Index")
+            'End If
 
 
         Catch
