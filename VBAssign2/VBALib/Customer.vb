@@ -92,12 +92,12 @@ Namespace BO
             'valid_ = True
         End Sub
 
-        Public Sub New(n As String, e As String)
-            Name = n
-            Email = e
-        End Sub
+        'Public Sub New(n As String, e As String)
+        '    Name = n
+        '    Email = e
+        'End Sub
 
-        Public Sub New(id As Integer, name As String, email As String, phone As String, Optional ByVal orders As List(Of Order) = Nothing)
+        Public Sub New(name As String, email As String, Optional ByVal id As Integer = -1, Optional ByVal phone As String = "", Optional ByVal orders As List(Of Order) = Nothing)
             _id = id
             Me.Name = name
             Me.Email = email

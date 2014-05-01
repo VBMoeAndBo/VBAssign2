@@ -21,18 +21,18 @@ End Code
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(Function(model) model.email, New With { .class = "control-label col-md-2" })
+            @Html.LabelFor(Function(model) model.Email, New With {.class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(Function(model) model.email)
-                @Html.ValidationMessageFor(Function(model) model.email)
+                @Html.EditorFor(Function(model) model.Email)
+                @Html.ValidationMessageFor(Function(model) model.Email)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(Function(model) model.phone, New With { .class = "control-label col-md-2" })
+            @Html.LabelFor(Function(model) model.Phone, New With {.class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(Function(model) model.phone)
-                @Html.ValidationMessageFor(Function(model) model.phone)
+                @Html.EditorFor(Function(model) model.Phone)
+                @Html.ValidationMessageFor(Function(model) model.Phone)
             </div>
         </div>
 

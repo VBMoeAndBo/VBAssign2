@@ -1,5 +1,6 @@
 ﻿Imports System.Web.Mvc
 Imports VBAssign2.ViewModels
+Imports VBAssign2.MyModels
 
 Public Class CustomerController
     Inherits Controller
@@ -7,6 +8,8 @@ Public Class CustomerController
     Dim Cst As ViewModels.RepoCustomer
     Dim Ord As ViewModels.RepoOrder
     Dim Itm As ViewModels.RepoItem
+
+    Private db As New DataContext
 
     Shared customer As New VBAssign2.ViewModels.CustomerForHttpGet
     Public Sub New()
@@ -37,14 +40,26 @@ Public Class CustomerController
     End Function
 
     ' POST: /Customer/Create
+    'Function Create(<Bind(Include:="ID,Title,ReleaseDate,Genre,Price,Rating")> ByVal movie As Movie) As ActionResult
+    '    If ModelState.IsValid Then
+    '        db.Movies.Add(movie)
+    '        db.SaveChanges()
+    '        Return RedirectToAction("Index")
+    '    End If
+    '    Return View(movie)
+    'End Function
     <HttpPost()>
-    Function Create(ByVal collection As FormCollection) As ActionResult
+    Function Create(ByVal customer As CustomerFull) As ActionResult
         Try
-            ' TODO: Add insert logic here
+            If ModelState.IsValid Then
+                db.Customers.Add(customer)
+                db.SaveChanges()
+                Return RedirectToAction("Index")
+            End If
 
-            Return RedirectToAction("Index")
+
         Catch
-            Return View()
+            Return View(customer)
         End Try
     End Function
 
