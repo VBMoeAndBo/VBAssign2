@@ -29,26 +29,49 @@ Namespace ViewModels
             Dim cstOrders As New List(Of OrderFull)
             Dim cstItems As New List(Of ItemFull)
             For Each ord In cst.Orders
-                'For Each itm In ord.ordItems
-                '    Dim t As New ItemFull
-                '    t.itmId = itm.itmId
-                '    t.brand = itm.Brand
-                '    t.name = itm.Name
-                '    t.price = itm.Price
-                '    t.quantity = itm.Quantity
+                For Each itm In ord.ordItems
+                    Dim t As New ItemFull
+                    t.itmId = itm.itmId
+                    t.brand = itm.Brand
+                    t.name = itm.Name
+                    t.price = itm.Price
+                    t.quantity = itm.Quantity
 
-                '    cstItems.Add(t)
-                'Next
+                    cstItems.Add(t)
+                Next
                 Dim o As New OrderFull
                 o.ordId = ord.ordId
                 o.ordDate = ord.ordDate
-                'o.items = cstItems
+                o.items = cstItems
                 cstOrders.Add(o)
             Next
 
-            cf.orders = cstOrders
-
             Return cf
+
+        End Function
+
+        Function createCustomer(newCustomer As CustomerForHttpPost, ByRef ms As ModelStateDictionary) As CustomerFull
+
+            '* we get the translation language by querying the database first
+
+            Dim o = New MyModels.Adapters.Order
+
+            Dim c = New MyModels.Adapters.Customer
+            
+
+            c.Name = newCustomer.Name
+            c.Email = newCustomer.Email
+            c.Phone = newCustomer.Phone
+            If c.CstState.IsValid Then
+                dc.Customers.Add(c)
+                dc.SaveChanges()
+                Return GetCustomerFullById(c.cstId)
+            Else
+                ms.Merge(c.CstState)
+                Return Nothing
+            End If
+
+
 
         End Function
 

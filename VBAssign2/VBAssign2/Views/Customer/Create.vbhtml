@@ -1,4 +1,4 @@
-﻿@ModelType VBAssign2.ViewModels.CustomerFull
+﻿@ModelType VBAssign2.ViewModels.CustomerForHttpGet
 @Code
     ViewData("Title") = "Create"
 End Code

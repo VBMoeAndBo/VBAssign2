@@ -17,7 +17,7 @@ Namespace ViewModels
         End Sub
         Public Property ordDate As Date
         Public Property customer As CustomerFull
-        Public Property items As ICollection(Of ItemFull)
+        Public Property items As List(Of ItemFull)
     End Class
 End Namespace
 
