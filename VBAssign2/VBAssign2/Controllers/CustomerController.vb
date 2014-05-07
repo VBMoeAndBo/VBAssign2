@@ -36,31 +36,23 @@ Public Class CustomerController
 
     ' GET: /Customer/Create
     Function Create() As ActionResult
-        Return View()
+        Return View(customer)
     End Function
 
     ' POST: /Customer/Create
-    'Function Create(<Bind(Include:="ID,Title,ReleaseDate,Genre,Price,Rating")> ByVal movie As Movie) As ActionResult
-    '    If ModelState.IsValid Then
-    '        db.Movies.Add(movie)
-    '        db.SaveChanges()
-    '        Return RedirectToAction("Index")
-    '    End If
-    '    Return View(movie)
-    'End Function
+    
     <HttpPost()>
-    Function Create(ByVal customer As CustomerFull) As ActionResult
-        Try
-            'If ModelState.IsValid Then
-            '    db.Customers.Add(customer)
-            '    db.SaveChanges()
-            '    Return RedirectToAction("Index")
-            'End If
+    Function Create(ByVal newCustomer As CustomerForHttpPost) As ActionResult
 
-
-        Catch
+        If (Not ModelState.IsValid) Then
+            ModelState.AddModelError("CreateCustomer", "Customer not created due to invalid or missing data")
             Return View(customer)
-        End Try
+        End If
+
+        Dim createdCustomer = Cst.createCustomer(newCustomer, Me.ModelState)
+
+        Return RedirectToAction("Details", New With {.id = createdCustomer.cstId})
+
     End Function
 
     ' GET: /Customer/Edit/5
@@ -106,5 +98,9 @@ Public Class CustomerController
             Return View()
         End Try
     End Function
+
+
+
+
 
 End Class

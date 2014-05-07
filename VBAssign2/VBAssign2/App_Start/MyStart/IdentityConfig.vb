@@ -115,13 +115,13 @@ Public Class MyDbInitializer
 
 
 
-    Sub New(Optional jf As String = "")
+    Sub New(Optional jf As String = "~/App_Data/CustomerList.json")
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", False)
         '    sw.WriteLine("New: Before all initializing")
         'End Using
-        If jf.Equals("") Then
-            jsonFile = HostingEnvironment.MapPath("~/App_Data/CustomerList.json")
+        If Not jf.Equals("") Then
+            jsonFile = HostingEnvironment.MapPath(jf)
         Else
             jsonFile = jf
         End If
