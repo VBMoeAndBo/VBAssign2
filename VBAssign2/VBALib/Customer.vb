@@ -4,6 +4,8 @@ Imports System.IO
 
 Namespace BO
     Public Class Customer
+
+        <JsonProperty("CustomerID")>
         Public ReadOnly Property CustomerID As Integer
             Get
                 Return _id
@@ -28,11 +30,11 @@ Namespace BO
                 Return _email
             End Get
             Set(value As String)
-                If Not Regex.IsMatch(value, "[a-zA-Z0-9]+@myseneca\.ca$") And Not Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
+                If Regex.IsMatch(value, "[a-zA-Z0-9]+@myseneca\.ca$") Or Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
+                    _email = value
+                Else
                     valid_ = False
                     Throw New ArgumentException("Email address is invalid, must be of format 'xxx@myseneca.ca' or 'xxx.xxx@senecacollege.ca'")
-                Else
-                    _email = value
                 End If
 
             End Set
@@ -46,6 +48,8 @@ Namespace BO
                 _phone = value
             End Set
         End Property
+
+        <JsonProperty("OrderList")>
         Public Property Orders As List(Of Order)
             Get
                 Return _orders
@@ -129,24 +133,26 @@ Namespace BO
         Function DeserializeJSON(jsonFilename As String) As List(Of Customer)
 
             Dim jsonString As String
-            Dim Hello As String
+            Dim customers = New List(Of Customer)
 
             Using sr As New IO.StreamReader(jsonFilename)
                 jsonString = sr.ReadToEnd()
-                Hello = ""
+
             End Using
 
+
+            Dim js = New JsonSerializerSettings
+
+            js.Converters.Add(New CustomerConverter)   '* handles message exceptions
+            Dim meh = New MyJsonErrorHandler          '* reset exception flag in JsonConverter
+            js.Error = AddressOf meh.Reset
             Try
-                Dim js = New JsonSerializerSettings
-
-                js.Converters.Add(New CustomerConverter)   '* handles message exceptions
-                Dim meh = New MyJsonErrorHandler          '* reset exception flag in JsonConverter
-                js.Error = AddressOf meh.Reset
-
-                Return JsonConvert.DeserializeObject(Of List(Of Customer))(jsonString, js)
+                customers = JsonConvert.DeserializeObject(Of List(Of Customer))(jsonString, js)
             Catch
                 Return Nothing
             End Try
+
+            Return customers
         End Function
 
     End Module
