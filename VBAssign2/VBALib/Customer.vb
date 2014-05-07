@@ -98,10 +98,14 @@ Namespace BO
 
         Public Sub New(name As String, email As String, Optional ByVal phone As String = "", Optional ByVal orders As List(Of Order) = Nothing)
             '_id = id
+            valid_ = True
+
             Me.Name = name
             Me.Email = email
             Me.Orders = orders
             Me.Phone = phone
+
+
         End Sub
 
         Public Overrides Function Equals(obj As Object) As Boolean

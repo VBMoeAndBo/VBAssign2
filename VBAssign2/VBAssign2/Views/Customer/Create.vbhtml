@@ -9,7 +9,7 @@ End Code
     @Html.AntiForgeryToken()
     
     @<div class="form-horizontal">
-        <h4>CustomerFull</h4>
+        <h4>Customer</h4>
         <hr />
         @Html.ValidationSummary(true)
         <div class="form-group">

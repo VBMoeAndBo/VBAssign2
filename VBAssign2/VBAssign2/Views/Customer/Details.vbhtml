@@ -6,7 +6,7 @@ End Code
 <h2>Details</h2>
 
 <div>
-    <h4>CustomerFull</h4>
+    <h4>Customer Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -32,6 +32,8 @@ End Code
         <dd>
             @Html.DisplayFor(Function(model) model.phone)
         </dd>
+
+        
 
     </dl>
 </div>

@@ -49,9 +49,16 @@ Public Class CustomerController
             Return View(customer)
         End If
 
-        Dim createdCustomer = Cst.createCustomer(newCustomer, Me.ModelState)
 
-        Return RedirectToAction("Details", New With {.id = createdCustomer.cstId})
+        Dim createdCustomer = Cst.createCustomer(newCustomer, Me.ModelState)
+        If createdCustomer Is Nothing Then
+            Return View(customer)
+        Else
+            Return RedirectToAction("Details", New With {.id = createdCustomer.cstId})
+        End If
+
+
+
 
     End Function
 

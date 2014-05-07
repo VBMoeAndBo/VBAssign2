@@ -17,7 +17,7 @@ Namespace MyModels.Adapters
             End Get
             Set(value As String)
                 Try
-                    msgState.Clear()
+                    ' msgState.Clear()
                     customer.Name = value
                 Catch ex As Exception
                     msgState.AddModelError("Name", ex.Message)
@@ -30,7 +30,7 @@ Namespace MyModels.Adapters
             End Get
             Set(value As String)
                 Try
-                    msgState.Clear()
+                    'msgState.Clear()
                     customer.Email = value
                 Catch ex As Exception
                     msgState.AddModelError("Email", ex.Message)
@@ -43,7 +43,7 @@ Namespace MyModels.Adapters
             End Get
             Set(value As String)
                 Try
-                    msgState.Clear()
+                    ' msgState.Clear()
                     customer.Phone = value
                 Catch ex As Exception
                     msgState.AddModelError("Phone", ex.Message)
