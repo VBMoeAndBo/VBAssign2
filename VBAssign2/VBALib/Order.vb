@@ -33,14 +33,18 @@ Namespace BO
         End Property
 
         Public Sub New()
-            '_id = -1
-            _ordDate = New DateTime
-            _items = Nothing
+            ''_id = -1
+            '_ordDate = New DateTime
+            '_items = Nothing
         End Sub
-        Public Sub New(ordDate As Date, orderItems As List(Of Item))
+        Public Sub New(orderItems As List(Of Item), Optional orderDate As Date = Nothing)
             '_id = -1
-            _ordDate = ordDate
+            ordDate = orderDate
+            If IsNothing(orderDate) Then
+                ordDate = Date.Now
+            End If
             _items = orderItems
+
         End Sub
 
 

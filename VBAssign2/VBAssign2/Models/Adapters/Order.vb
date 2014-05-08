@@ -19,7 +19,7 @@ Namespace MyModels.Adapters
         End Sub
 
         Public Sub New(d As Date, itms As List(Of VBALib.BO.Item))
-            libOrder = New VBALib.BO.Order(d, itms)
+            libOrder = New VBALib.BO.Order(itms, d)
             libOrdState = New ModelStateDictionary
         End Sub
 
@@ -31,7 +31,6 @@ Namespace MyModels.Adapters
             End Get
             Set(value As Date)
                 Try
-                    libOrdState.Clear()
                     libOrder.ordDate = value
                 Catch ex As Exception
                     '* IMPORTANT key value should be same as the property

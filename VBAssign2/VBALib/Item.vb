@@ -14,6 +14,7 @@ Namespace BO
             End Get
             Set(value As String)
                 If IsNothing(value) Or value = "" Then
+                    _valid = False
                     Throw New ArgumentException("Item name cannot be empty")
                 Else
                     _name = value
@@ -28,6 +29,7 @@ Namespace BO
                 If value >= 0 Then
                     _price = value
                 Else
+                    _valid = False
                     Throw New ArgumentException("Price cannot be negative")
                 End If
             End Set
@@ -41,6 +43,7 @@ Namespace BO
                 If value > 0 Then
                     _quantity = value
                 Else
+                    _valid = False
                     Throw New ArgumentException("Quantity must be greater than 0")
                 End If
             End Set
@@ -52,6 +55,7 @@ Namespace BO
             End Get
             Set(value As String)
                 If value = "" Then
+                    _valid = False
                     Throw New ArgumentException("Brand is required")
                 Else
                     _brand = value
@@ -61,6 +65,7 @@ Namespace BO
 
         Public Sub New(name As String, brand As String, price As Double, quantity As Integer)
             '_id = id
+            _valid = True
             Me.Name = name
             Me.Price = price
             Me.Brand = brand
@@ -69,11 +74,11 @@ Namespace BO
 
         '<Newtonsoft.Json.JsonConstructor()>
         Public Sub New()
-            '_id = -1
-            Me.Name = "name"
-            Me.Price = 1.0
-            Me.Quantity = 1
-            Me.Brand = "brand"
+            ''_id = -1
+            'Me.Name = "name"
+            'Me.Price = 1.0
+            'Me.Quantity = 1
+            'Me.Brand = "brand"
         End Sub
 
         Public Overrides Function Equals(obj As Object) As Boolean
@@ -92,6 +97,7 @@ Namespace BO
         Dim _price As Double
         Dim _quantity As Integer
         Dim _brand As String
+        Dim _valid As Boolean
 
     End Class
 

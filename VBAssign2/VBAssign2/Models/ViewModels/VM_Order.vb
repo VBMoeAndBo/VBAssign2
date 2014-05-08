@@ -15,6 +15,7 @@ Namespace ViewModels
         Public Sub New()
             Me.items = New List(Of ItemFull)
         End Sub
+        '<Authorize(Roles:="Admin")>
         Public Property ordDate As Date
         Public Property customer As CustomerFull
         Public Property items As List(Of ItemFull)

@@ -30,7 +30,7 @@ Namespace BO
                 Return _email
             End Get
             Set(value As String)
-                If Regex.IsMatch(value, "[a-zA-Z0-9]+@myseneca\.ca$") Or Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
+                If Regex.IsMatch(value, "^[a-zA-Z0-9]+@myseneca\.ca$") Or Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
                     _email = value
                 Else
                     valid_ = False
