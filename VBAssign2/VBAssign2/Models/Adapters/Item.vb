@@ -76,6 +76,17 @@ Namespace MyModels.Adapters
             itmState_ = New ModelStateDictionary
         End Sub
 
+        Public Sub New(ByVal itm As VBALib.BO.Item, ByVal id As Integer)
+            itmId = id
+            item_ = New VBALib.BO.Item
+            item_.Name = itm.Name
+            item_.Brand = itm.Brand
+            item_.Price = itm.Price
+            item_.Quantity = itm.Quantity
+
+            itmState_ = New ModelStateDictionary
+        End Sub
+
         Dim item_ As VBALib.BO.Item
         Dim itmState_ As ModelStateDictionary
 
@@ -84,6 +95,8 @@ Namespace MyModels.Adapters
                 Return itmState_
             End Get
         End Property
+
+        
 
     End Class
 End Namespace

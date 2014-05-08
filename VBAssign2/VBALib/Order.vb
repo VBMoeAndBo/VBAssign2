@@ -19,11 +19,11 @@ Namespace BO
 
             End Set
         End Property
-        Public Property ordDate As DateTime
+        Public Property ordDate As Date
             Get
                 Return _ordDate
             End Get
-            Set(value As DateTime)
+            Set(value As Date)
                 If IsNothing(value) Then
                     Throw New ArgumentException("Order Date is required")
                 Else
@@ -34,7 +34,7 @@ Namespace BO
 
         Public Sub New()
             ''_id = -1
-            '_ordDate = New DateTime
+            '_ordDate = New Date
             '_items = Nothing
         End Sub
         Public Sub New(orderItems As List(Of Item), Optional orderDate As Date = Nothing)

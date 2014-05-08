@@ -39,12 +39,17 @@ Public Class SeedData
         Dim jsonCustomers As List(Of VBALib.BO.Customer)
         Dim aCustomer As New VBALib.BO.Customer
 
-        jsonCustomers = VBALib.BO.CustomerHelper.DeserializeJSON(jsonFile_)
+        Dim jsonItems As List(Of VBALib.BO.Item)
+        Dim anItem As New VBALib.BO.Item
+
+        jsonCustomers = VBALib.BO.CustomerHelper.DeserializeJSON(custFile_)
+        jsonItems = VBALib.BO.ItemHelper.DeserializeJSON(itemFile_)
 
         '* Create list of MvcMessageAdapters to hold only records
         '* that are valid for given business rules (IsValid flag
         '* set to false when any exception occurs in properties)
         Dim mvcCustomers = New List(Of Adapters.Customer)
+        Dim mvcItems = New List(Of Adapters.Item)
 
         Dim pId As Integer = 0
 
@@ -56,6 +61,16 @@ Public Class SeedData
             End If
         Next
 
+        pId = 0
+
+        For Each jItem In jsonItems
+            If (jItem.IsValid) Then
+
+                mvcItems.Add(New Adapters.Item(jItem, pId))
+                pId = pId + 1
+            End If
+        Next
+
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", True)
         '    sw.WriteLine("Read json, now writing to database")
@@ -63,11 +78,14 @@ Public Class SeedData
 
         '* Add to the Messages table (master in the database)
         mvcCustomers.ForEach(Function(g) context.Customers.Add(g))
+        mvcItems.ForEach(Function(g) context.Items.Add(g))
 
 
         '* Free records
         jsonCustomers = Nothing
         mvcCustomers = Nothing
+        jsonItems = Nothing
+        mvcItems = Nothing
 
         '   MyBase.Seed(context)
     End Sub
@@ -202,14 +220,17 @@ Public Class SeedData
 
     End Sub
 
-    Dim jsonFile_ As String
+    Dim custFile_ As String
+    Dim itemFile_ As String
 
     Public Sub New()
-        jsonFile_ = HttpContext.Current.Server.MapPath("~/App_Data/CustomerList.json")
+        custFile_ = HttpContext.Current.Server.MapPath("~/App_Data/CustomerList.json")
+        itemFile_ = HttpContext.Current.Server.MapPath("~/App_Data/ItemList.json")
     End Sub
 
-    Public Sub New(jsonFilename As String)
-        jsonFile_ = jsonFilename
+    Public Sub New(jsonFilename As String, jsonFileName2 As String)
+        custFile_ = jsonFilename
+        itemFile_ = jsonFileName2
     End Sub
 
 End Class

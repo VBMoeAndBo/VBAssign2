@@ -41,7 +41,7 @@ Public Class MyDbInitializer
         End Using
 
         '* initialize data with JSON data
-        Dim sd = New SeedData(jsonFile)
+        Dim sd = New SeedData(jsonFile, jsonFile2)
         sd.InitializeDbWithValues(context)
 
         '' left this here to demonstrate how I debugged unit testing issues
@@ -111,20 +111,24 @@ Public Class MyDbInitializer
     End Sub
 
     Dim jsonFile As String
+    Dim jsonFile2 As String
 
 
 
 
-    Sub New(Optional jf As String = "~/App_Data/CustomerList.json")
+    Sub New(Optional jf As String = "~/App_Data/CustomerList.json", Optional jf2 As String = "~/App_Data/ItemList.json")
         '' left this here to demonstrate how I debugged unit testing issues
         'Using sw = New IO.StreamWriter("logFile.txt", False)
         '    sw.WriteLine("New: Before all initializing")
         'End Using
-        If Not jf.Equals("") Then
-            jsonFile = HostingEnvironment.MapPath(jf)
-        Else
-            jsonFile = jf
-        End If
+
+        jsonFile = HostingEnvironment.MapPath(jf)
+
+        'If Not jf2.Equals("") Then
+        jsonFile2 = HostingEnvironment.MapPath(jf2)
+        'Else
+        'jsonFile2 = jf2
+        'End If
 
     End Sub
 

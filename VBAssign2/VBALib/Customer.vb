@@ -12,64 +12,64 @@ Namespace BO
             End Get
         End Property
         Public Property Name As String
-            Get
-                Return _name
-            End Get
-            Set(value As String)
-                If value = "" Then
-                    valid_ = False
-                    Throw New ArgumentException("Name cannot be empty")
-                Else
-                    _name = value
-                End If
+        '    Get
+        '        Return _name
+        '    End Get
+        '    Set(value As String)
+        '        If value = "" Then
+        '            valid_ = False
+        '            Throw New ArgumentException("Name cannot be empty")
+        '        Else
+        '            _name = value
+        '        End If
 
-            End Set
-        End Property
+        '    End Set
+        'End Property
         Public Property Email As String
-            Get
-                Return _email
-            End Get
-            Set(value As String)
-                If Regex.IsMatch(value, "^[a-zA-Z0-9]+@myseneca\.ca$") Or Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
-                    _email = value
-                Else
-                    valid_ = False
-                    Throw New ArgumentException("Email address is invalid, must be of format 'xxx@myseneca.ca' or 'xxx.xxx@senecacollege.ca'")
-                End If
+        '    Get
+        '        Return _email
+        '    End Get
+        '    Set(value As String)
+        '        If Regex.IsMatch(value, "^[a-zA-Z0-9]+@myseneca\.ca$") Or Regex.IsMatch(value, "[a-zA-Z0-9]+\.[a-zA-Z0-9]+@senecacollege\.ca$") Then
+        '            _email = value
+        '        Else
+        '            valid_ = False
+        '            Throw New ArgumentException("Email address is invalid, must be of format 'xxx@myseneca.ca' or 'xxx.xxx@senecacollege.ca'")
+        '        End If
 
-            End Set
-        End Property
+        '    End Set
+        'End Property
 
         Public Property Phone As String
-            Get
-                Return _phone
-            End Get
-            Set(value As String)
-                _phone = value
-            End Set
-        End Property
+        '    Get
+        '        Return _phone
+        '    End Get
+        '    Set(value As String)
+        '        _phone = value
+        '    End Set
+        'End Property
 
         <JsonProperty("OrderList")>
         Public Property Orders As List(Of Order)
-            Get
-                Return _orders
-            End Get
-            Set(value As List(Of Order))
-                If value IsNot Nothing Then
-                    For Each o In value
-                        If o.OrderID = -1 Then
-                            _lastOrderID += 1
-                            o.SetID(_lastOrderID)
-                        End If
-                    Next
-                    _orders = value
-                Else
+        '    Get
+        '        Return _orders
+        '    End Get
+        '    Set(value As List(Of Order))
+        '        If value IsNot Nothing Then
+        '            For Each o In value
+        '                If o.OrderID = -1 Then
+        '                    _lastOrderID += 1
+        '                    o.SetID(_lastOrderID)
+        '                End If
+        '            Next
+        '            _orders = value
+        '        Else
 
-                    _orders = New List(Of Order)
-                End If
+        '            _orders = New List(Of Order)
+        '        End If
 
-            End Set
-        End Property
+        '    End Set
+        'End Property
         ReadOnly Property IsValid() As Boolean
             Get
                 Return valid_
@@ -78,11 +78,11 @@ Namespace BO
 
 
         Dim _lastOrderID As Integer
-        Dim _email As String
-        Dim _name As String
-        Dim _phone As String
+        'Dim _email As String
+        'Dim _name As String
+        'Dim _phone As String
         Dim _id As Integer
-        Dim _orders As List(Of Order)
+        'Dim _orders As List(Of Order)
         Dim valid_ As Boolean
 
 
@@ -93,7 +93,7 @@ Namespace BO
             'Dim ordL As List(Of Order) = Nothing
             'Me.Orders = ordL
             'Me.Phone = ""
-            'valid_ = True
+            valid_ = True
         End Sub
 
         Public Sub New(name As String, email As String, Optional ByVal phone As String = "", Optional ByVal orders As List(Of Order) = Nothing)
@@ -123,6 +123,7 @@ Namespace BO
         End Sub
         <Newtonsoft.Json.JsonConstructor()>
         Friend Sub New(ByVal CustomerID As Integer, ByVal Name As String, ByVal Email As String, ByVal OrderList As List(Of Order))
+            valid_ = True
             _id = CustomerID
             Me.Name = Name
             Me.Email = Email

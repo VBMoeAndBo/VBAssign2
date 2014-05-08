@@ -20,7 +20,7 @@ Namespace MyModels.Adapters
                     ' msgState.Clear()
                     customer.Name = value
                 Catch ex As Exception
-                    msgState.AddModelError("Name", ex.Message)
+                    _cstState.AddModelError("Name", ex.Message)
                 End Try
             End Set
         End Property
@@ -33,7 +33,7 @@ Namespace MyModels.Adapters
                     'msgState.Clear()
                     customer.Email = value
                 Catch ex As Exception
-                    msgState.AddModelError("Email", ex.Message)
+                    _cstState.AddModelError("Email", ex.Message)
                 End Try
             End Set
         End Property
@@ -46,7 +46,7 @@ Namespace MyModels.Adapters
                     ' msgState.Clear()
                     customer.Phone = value
                 Catch ex As Exception
-                    msgState.AddModelError("Phone", ex.Message)
+                    _cstState.AddModelError("Phone", ex.Message)
                 End Try
             End Set
         End Property
@@ -55,7 +55,7 @@ Namespace MyModels.Adapters
         Public Sub New()
             customer = New VBALib.BO.Customer
             orders_ = New List(Of Adapters.Order)
-            msgState = New ModelStateDictionary
+            _cstState = New ModelStateDictionary
         End Sub
 
         Public Sub New(ByVal cst As VBALib.BO.Customer, ByVal id As Integer)
@@ -82,15 +82,17 @@ Namespace MyModels.Adapters
                               .ordItems = cItems})
             Next
             Orders = cOrders
+
+            _cstState = New ModelStateDictionary
         End Sub
 
         Dim customer As VBALib.BO.Customer
         Dim orders_ As List(Of Adapters.Order)
-        Dim msgState As ModelStateDictionary
+        Dim _cstState As ModelStateDictionary
 
         Public ReadOnly Property CstState() As ModelStateDictionary
             Get
-                Return msgState
+                Return _cstState
             End Get
         End Property
     End Class
